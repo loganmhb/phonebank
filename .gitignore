@@ -1,3 +1,4 @@
 phonebank.egg-info
+phonebank/*.db
 venv/
-**/__pycache/
+**/__pycache__/

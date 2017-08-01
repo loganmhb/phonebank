@@ -39,7 +39,7 @@ class PhonebankTestCase(unittest.TestCase):
             notes='Existence unknown.'
         ), follow_redirects=True)
 
-         assert rv.status_code == 400
+         assert b'Phone number must contain ten digits' in rv.data
 
 if __name__ == '__main__':
     unittest.main()
