@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>Add a contact</h2>
+  <form action="{{ url_for('add_contact') }}" method=post class=add-entry>
+      <dl>
+          <dt>Name:
+          <dd><input type="text" name="name" />
+          <dt>Phone number:
+          <dd><input type="text" name="phone_number" />
+          <dt>Address:
+          <dd><input type="text" name="address" />
+          <dt>Notes:
+          <dd><textarea name="notes" rows="10" cols="30" />
+              </textarea>
+ 
+          <dd><input type=submit value="Add contact" />
+      </dl>
+  </form>
+
+  <ul class="contacts">
+      {% for contact in contacts %}
+      <li>{{ contact.name }} - {{ contact.phone_number }}</li>
+      {% else %}
+      <li><em>Nothing here yet</em></li>
+      {% endfor %}
+  </ul>
+{% endblock %}
